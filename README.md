@@ -188,7 +188,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 Nó sẽ yêu cầu bạn nhập tên file để lưu, nếu bạn enter thì nó sẽ lấy tên file mặc định như trong dấu (). Lưu ý là khi nhập tên file phải nhập đầy đủ đường dẫn lưu file tương tự như trong dấu () nhé.
 
 ```bash
-Enter file in which to save the key (/c/Users/dutha/.ssh/id_ed25519):
+Enter file in which to save the key (/c/Users/ComputerName/.ssh/id_ed25519):
 ```
 
 Tiếp theo nó sẽ yêu cầu bạn nhập passphrase (tương tự password thôi). Cá nhân mình thì không nhập, cứ Enter thôi vì khi nhập sau này mỗi khi làm việc với Git phải nhập passphrase khá mệt
@@ -204,14 +204,14 @@ Enter same passphrase again:
 Sau khi tạo thành công thì nó sẽ sinh ra cho bạn 2 file là private key và public key theo đường dẫn mà bạn nhập tên file. File chứa public key sẽ có đuôi `.pub` phía sau.
 
 ```bash
-Your identification has been saved in /c/Users/dutha/.ssh/id_duthanhduoc10
-Your public key has been saved in /c/Users/dutha/.ssh/id_duthanhduoc10.pub
+Your identification has been saved in /c/Users/dutha/.ssh/id_trandangkhoi10
+Your public key has been saved in /c/Users/dutha/.ssh/id_trandangkhoi10.pub
 ```
 
-Để đọc nội dung public SSH key thì bạn chỉ có khá nhiều cách, bạn dùng cách nào dưới đây cũng được. Ví dụ file public key của mình bên trên là `id_duthanhduoc10.pub`
+Để đọc nội dung public SSH key thì bạn chỉ có khá nhiều cách, bạn dùng cách nào dưới đây cũng được. Ví dụ file public key của mình bên trên là `id_trandangkhoi10.pub`
 
-- Copy đường dẫn này `c:/Users/dutha/.ssh/id_duthanhduoc10.pub` bỏ lên Chrome thì nó sẽ ra nội dung của public key
-- Dùng git bash gõ `cat /c/Users/dutha/.ssh/id_duthanhduoc10.pub`
+- Copy đường dẫn này `c:/Users/dutha/.ssh/id_trandangkhoi10.pub` bỏ lên Chrome thì nó sẽ ra nội dung của public key
+- Dùng git bash gõ `cat /c/Users/dutha/.ssh/id_trandangkhoi10.pub`
 
 ### 8.4. Tiến hành thêm SSH public key vào Github
 
@@ -299,22 +299,22 @@ HostName github.com
 User git
 IdentityFile ~/.ssh/id_rsa
 
-#React-Awesome duthanhduoc06
-Host github-duthanhduoc06.com
+#React-Awesome trandangkhoi
+Host github-trandangkhoi.com
 HostName github.com
 User git
-IdentityFile ~/.ssh/id_rsa_duthanhduoc06
+IdentityFile ~/.ssh/id_rsa_trandangkhoi
 ```
 
-Ở trên thì mình có dùng 2 tài khoản Github, cái đầu tiên dùng với private key là `id_rsa` với Host là `github.com`, cái thứ hai là `id_rsa_duthanhduoc06` với Host là `github-duthanhduoc06.com`.
+Ở trên thì mình có dùng 2 tài khoản Github, cái đầu tiên dùng với private key là `id_rsa` với Host là `github.com`, cái thứ hai là `id_rsa_trandangkhoi` với Host là `github-trandangkhoi.com`.
 
 Khi mình clone những repo thuộc quyền của tài khoản github đầu tiên thì mình vẫn giữ nguyên link github.com nhưng nếu mình clone những repo thuộc quyền sở hữu của tài khoản thứ hai thì mình phải thay đổi thành như thế này
 
 ```bash
-git clone git@github-duthanhduoc06.com:dreact04072022/git-can-ban.git
+git clone git@github-trandangkhoi.com:dreact04072022/git-can-ban.git
 ```
 
-Tương tự với những câu lệnh như `git remote add origin git@github-duthanhduoc06.com:dreact04072022/git-can-ban.git`
+Tương tự với những câu lệnh như `git remote add origin git@github-trandangkhoi.com:dreact04072022/git-can-ban.git`
 
 ## 10. Đẩy code lên git server với `git push`
 
